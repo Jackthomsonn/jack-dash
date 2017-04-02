@@ -1,0 +1,45 @@
+{
+  "name": "jack-dash",
+  "version": "1.0.0",
+  "description": "A helpful utility library",
+  "main": "src/jackDash.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jackthomsonn/jack-dash.git"
+  },
+  "keywords": [
+    "JackDash",
+    "Helpers",
+    "Javascript"
+  ],
+  "author": "Jack Thomson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jackthomsonn/jack-dash/issues"
+  },
+  "homepage": "https://github.com/Jackthomsonn/jack-dash#readme",
+  "scripts": {
+    "build": "mkdir -p dist && uglifyjs src/jackDash.js -m -o dist/jackDash.min.js",
+    "test": "karma start --single-run"
+  },
+  "devDependencies": {
+    "brfs": "^1.4.0",
+    "browserify": "^12.0.1",
+    "browserify-shim": "^3.8.0",
+    "karma": "^0.13.0",
+    "karma-browserify": "^5.0.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-coverage": "^1.1.1",
+    "karma-jasmine": "^0.1.5",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "uglify-js": "^2.8.21",
+    "watchify": "^3.6.1"
+  },
+  "browserify-shim": {
+    "external": "global:External"
+  },
+  "dependencies": {
+    "browserify-istanbul": "^2.0.0",
+    "jasmine": "^2.5.3"
+  }
+}
