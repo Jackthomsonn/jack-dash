@@ -162,7 +162,7 @@ var JackDash = function () {
             var iterator = 0
             var results = []
 
-            const checkForMoreFns = function () {
+            var checkForMoreFns = function () {
 
               if (iterator < fns.length) {
                 fns[iterator](cb)
@@ -171,7 +171,7 @@ var JackDash = function () {
               }
             }
 
-            const cb = function(error, body) {
+            var cb = function(error, body) {
               if (error !== null) {
                 iterator = fns.length
                 err = new CustomError('Async Series', error)
@@ -185,8 +185,8 @@ var JackDash = function () {
 
             checkForMoreFns()
           } else {
-            const keys = Object.keys(fns)
-            const functionDatas = []
+            var keys = Object.keys(fns)
+            var functionDatas = []
 
             keys.forEach(function (key) {
               functionDatas.push({
@@ -195,7 +195,7 @@ var JackDash = function () {
               })
             })
 
-            const checkForMoreFns = function () {
+            var checkForMoreFns = function () {
               if (iterator < keys.length) {
                 functionDatas[iterator].function(function (err, body) {
                   cb(err, body, functionDatas[iterator].propertyName)
@@ -205,7 +205,7 @@ var JackDash = function () {
               }
             }
 
-            const cb = function (error, body, propertyName) {
+            var cb = function (error, body, propertyName) {
               if (error !== null) {
                 iterator = keys.length
                 err = new CustomError('Async Series', error)

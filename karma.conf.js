@@ -2,7 +2,7 @@ var istanbul = require('browserify-istanbul')
 
 module.exports = function (karma) {
   'use strict';
-  karma.set({
+  var configuration = {
     basePath: '',
     frameworks: [
       'jasmine',
@@ -21,6 +21,12 @@ module.exports = function (karma) {
     browsers: [
       'Chrome'
     ],
+    customLaunchers: {
+      Chrome_travis_ci: {
+        base: 'Chrome',
+        flags: ['--no-sandbox']
+      }
+    },
     singleRun: false,
     autoWatch: false,
     browserify: {
@@ -38,7 +44,10 @@ module.exports = function (karma) {
       dir: 'coverage/report',
       subdir: '.'
     },
-    // If browser does not capture in given timeout [ms], kill it
     captureTimeout: 60000
-  });
+  }
+
+  if (process.env.TRAVIS) { configuration.browsers = ['Chrome_travis_ci']; }
+
+  karma.set(configuration);
 };
