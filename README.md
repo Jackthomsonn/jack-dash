@@ -4,4 +4,6 @@ Jack Dash is a little helper library I have built for personal projects & got th
 
 If you do decide to add your own methods then please make sure you test your code otherwise your pull request will be declined. I am going to be adding Travis CI to the project just for a bit of fun and sense of security!
 
-I hope you like it :D
+# Documentation
+
+http://codepen.io/Jackthomsonn/full/ObWqwp/
